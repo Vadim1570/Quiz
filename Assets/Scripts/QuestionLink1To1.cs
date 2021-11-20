@@ -6,22 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class QuestionLink1To1 : MonoBehaviour
 {
-    public string questionUniqueId;
-
-    public Camera mainCamera;
+    public string QuestionUniqueId;
 
     //Заранее заполненные правильные ответы
     public PointPair [] rightLinks;
 
     //Сюда запоминаем точки, которые пытаються связать между собой
-    private GameObject point1 = null;
-    private GameObject point2 = null;
+    public GameObject point1 = null;
+    public GameObject point2 = null;
     
     //Сюда запоминаем уже связанные между собой точки
-    private List<PointPair> alreadylinked = new List<PointPair>();
-    private bool isAlreadyLinked(GameObject point)
+    public List<PointPair> alreadylinkedPoints = new List<PointPair>();
+
+    #region Private methods
+    private bool IsAlreadyLinked(GameObject point)
     {
-        foreach(var pair in alreadylinked)
+        foreach(var pair in alreadylinkedPoints)
         {
             if(point == pair.Point1 || point == pair.Point2)
             return true;
@@ -29,12 +29,14 @@ public class QuestionLink1To1 : MonoBehaviour
         return false;
     }
 
-    private void removefromAlreadyLinked(GameObject point)
+    private void RemoveFromAlreadyLinked(GameObject point)
     {
-        var pairToRemove = alreadylinked.FirstOrDefault(pair => point == pair.Point1 || point == pair.Point2);
+        var pairToRemove = alreadylinkedPoints.FirstOrDefault(pair => point == pair.Point1 || point == pair.Point2);
         if (pairToRemove != null)
-            alreadylinked.Remove(pairToRemove);
+            alreadylinkedPoints.Remove(pairToRemove);
     }
+    #endregion
+
     private void Awake()
     {
     }
@@ -43,46 +45,26 @@ public class QuestionLink1To1 : MonoBehaviour
     {
     }
 
-    public void linkpoint_OnPointerClick(GameObject point)
-    {
-        //При нажатии на первую точку, включим рисовалку линии
-        if(point1 == null)
-        {
-            point1 = point;
-            point1.GetComponent<LineRenderer>().enabled = true;
-            removefromAlreadyLinked(point1);
-        }
-        else //У второй точки, отключим рисовалку линии
-        if(!isAlreadyLinked(point))
-        {
-            point2 = point;
-            point2.GetComponent<LineRenderer>().enabled = false;
-        }
-
-        //Если привязка двух точек произошла, то начертим линию между ними
-        if(point1 != null && point2 != null)
-        {
-            var point1_lr = point1.GetComponent<LineRenderer>();
-            point1_lr.SetPosition(0, point1.GetComponent<Transform>().position);
-            point1_lr.SetPosition(1, point2.GetComponent<Transform>().position);
-
-            alreadylinked.Add(new PointPair() { Point1 = point1, Point2 = point2});
-            point1 = null;
-            point2 = null;
-        }
-    }
-
     void Update()
     {
-        //Если во время перетаскивания нажали прав.кнопку.мыши, вернем линию в точку
-        if (Input.GetButtonDown("Fire2"))
-        {
-            if(point1 != null && point2 == null)
-            {
-                point1.GetComponent<LineRenderer>().SetPosition(1, point1.GetComponent<Transform>().position);
-                point1 = null;
+        if (Input.GetMouseButtonDown(0)) {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+            
+            //Если нажали на точку-с-линией
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            if (hit.collider != null && hit.collider.gameObject.tag == "Linkpoint") {
+                OnLinkpointClick(hit.collider.gameObject);
             }
-                
+            else
+            {
+                //Если протягивали линию, но нажали в пустое место, то отменим линию
+                if(point1 != null && point2 == null)
+                {
+                    point1.GetComponent<LineRenderer>().SetPosition(1, point1.GetComponent<Transform>().position);
+                    point1 = null;
+                }  
+            }
         }
         
         //Анимация перетаскивания линии за курсором мыши
@@ -92,9 +74,44 @@ public class QuestionLink1To1 : MonoBehaviour
             var point1_lr = point1.GetComponent<LineRenderer>();
             
             point1_lr.positionCount = 2;
-            var mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             point1_lr.SetPosition(0, point1_tr.position);
             point1_lr.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0f));
+        }
+    }
+
+    public void OnLinkpointClick(GameObject point)
+    {
+        //При нажатии на первую точку, включим рисовалку линии
+        if(point1 == null)
+        {
+            if(point.GetComponent<LineRenderer>() != null && point.GetComponent<LineRenderer>().enabled == true)
+            {
+                point1 = point;
+                RemoveFromAlreadyLinked(point1);
+            }
+        }
+        else //У второй точки, отключим рисовалку линии
+        {
+            if(!IsAlreadyLinked(point))
+            {
+                if(point.GetComponent<LineRenderer>() == null || point.GetComponent<LineRenderer>().enabled == false)
+                {
+                    point2 = point;
+                }
+            }
+        }
+
+        //Если привязка двух точек произошла, то начертим линию между ними
+        if(point1 != null && point2 != null)
+        {
+            var point1_lr = point1.GetComponent<LineRenderer>();
+            point1_lr.SetPosition(0, point1.GetComponent<Transform>().position);
+            point1_lr.SetPosition(1, point2.GetComponent<Transform>().position);
+
+            alreadylinkedPoints.Add(new PointPair() { Point1 = point1, Point2 = point2});
+            point1 = null;
+            point2 = null;
         }
     }
 
@@ -102,21 +119,15 @@ public class QuestionLink1To1 : MonoBehaviour
     {
         bool isAnswearCorrect = true;
 
-        foreach(var pair in alreadylinked)
+        foreach(var pair in alreadylinkedPoints)
         {
-            foreach(var rpair in rightLinks)
-            {
-                bool zacepil = pair.Point1 == rpair.Point2 || pair.Point1 == rpair.Point2;
-                bool vitanul = pair.Point2 == rpair.Point1 || pair.Point2 == rpair.Point1;
-                if(zacepil && !vitanul)
-                    isAnswearCorrect = false;
-            }
+            //Каждую связанную пару точек, проверим в массиве правильных ответов
+            if(alreadylinkedPoints.Count(rpair => rpair.Point1 == pair.Point1 && rpair.Point2 == pair.Point2) == 0)
+                isAnswearCorrect = false;
         }
 
         if(isAnswearCorrect)
         {
-            //var gameManager = GameObject.FindObjectOfType(typeof(GameManager)) as GameManager;
-            //gameManager.IncreaseScore(1);
             ScoreKeeper.GetScoreKeeper().Score += 1;
         }
 
