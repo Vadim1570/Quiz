@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Puzzle
   - Linkpoint
+  - Stamp
   layers:
   - Default
   - TransparentFX
