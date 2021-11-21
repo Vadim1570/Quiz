@@ -10,7 +10,6 @@ public class QuestionPuzzle : MonoBehaviour
 {
     public List<PieceWithProperty> piecesWithProperty = new List<PieceWithProperty>();
     public GameObject selectedPiece;
-    public PieceWithProperty selectedPieceProp;
 
     void Start()
     {
@@ -44,7 +43,7 @@ public class QuestionPuzzle : MonoBehaviour
 
         if(selectedPiece != null)
         {
-            selectedPieceProp = piecesWithProperty.FirstOrDefault(pp => pp.pieceGameObject == selectedPiece);
+            var selectedPieceProp = piecesWithProperty.FirstOrDefault(pp => pp.pieceGameObject == selectedPiece);
 
             //Двиагем выбранный элемент пазла
             var mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
