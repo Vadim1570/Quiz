@@ -54,63 +54,59 @@ public class QuestionLink1To1 : MonoBehaviour
             //Если нажали на точку-с-линией
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
             if (hit.collider != null && hit.collider.gameObject.tag == "Linkpoint") {
-                OnLinkpointClick(hit.collider.gameObject);
-            }
-            else
-            {
-                //Если протягивали линию, но нажали в пустое место, то отменим линию
-                if(point1 != null && point2 == null)
+                //При нажатии на первую точку, включим рисовалку линии
+                if(point1 == null)
                 {
-                    point1.GetComponent<LineRenderer>().SetPosition(1, point1.GetComponent<Transform>().position);
-                    point1 = null;
-                }  
+                    var point = hit.collider.gameObject;
+                    if(point.GetComponent<LineRenderer>() != null && point.GetComponent<LineRenderer>().enabled == true)
+                    {
+                        point1 = point;
+                        RemoveFromAlreadyLinked(point1);
+                    }
+                }
             }
+        }
 
+        if (Input.GetMouseButton(0))
+        {
             //Анимация перетаскивания линии за курсором мыши
             if(point1 != null && point2 == null)
             {
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 var point1_tr = point1.GetComponent<Transform>();
                 var point1_lr = point1.GetComponent<LineRenderer>();
                 
                 point1_lr.positionCount = 2;
                 point1_lr.SetPosition(0, point1_tr.position);
                 point1_lr.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0f));
-            }
-        }
-    }
 
-    public void OnLinkpointClick(GameObject point)
-    {
-        //При нажатии на первую точку, включим рисовалку линии
-        if(point1 == null)
-        {
-            if(point.GetComponent<LineRenderer>() != null && point.GetComponent<LineRenderer>().enabled == true)
-            {
-                point1 = point;
-                RemoveFromAlreadyLinked(point1);
-            }
-        }
-        else //У второй точки, отключим рисовалку линии
-        {
-            if(!IsAlreadyLinked(point))
-            {
-                if(point.GetComponent<LineRenderer>() == null || point.GetComponent<LineRenderer>().enabled == false)
+                //Если находимся рядом со свободной точкой, то свяжем 2 точки 
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if(hit.transform != null && hit.transform.CompareTag("Linkpoint"))
                 {
-                    point2 = point;
+                    var point = hit.transform.gameObject;
+                    if(!IsAlreadyLinked(point) && point.GetComponent<LineRenderer>() != null && point.GetComponent<LineRenderer>().enabled == false)
+                    {
+                        point2 = point;
+                        point1_lr.SetPosition(0, point1.GetComponent<Transform>().position);
+                        point1_lr.SetPosition(1, point2.GetComponent<Transform>().position);
+
+                        alreadylinkedPoints.Add(new PointPair() { Point1 = point1, Point2 = point2});
+                        point1 = null;
+                        point2 = null;
+
+                    }
                 }
             }
         }
-
-        //Если привязка двух точек произошла, то начертим линию между ними
-        if(point1 != null && point2 != null)
+        else
         {
-            var point1_lr = point1.GetComponent<LineRenderer>();
-            point1_lr.SetPosition(0, point1.GetComponent<Transform>().position);
-            point1_lr.SetPosition(1, point2.GetComponent<Transform>().position);
-
-            alreadylinkedPoints.Add(new PointPair() { Point1 = point1, Point2 = point2});
-            point1 = null;
-            point2 = null;
+            //Если протягивали линию, но отжали кнопку, то отменим линию
+            if(point1 != null && point2 == null)
+            {
+                point1.GetComponent<LineRenderer>().SetPosition(1, point1.GetComponent<Transform>().position);
+                point1 = null;
+            }  
         }
     }
 
