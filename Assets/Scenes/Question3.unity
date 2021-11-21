@@ -374,8 +374,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236813584}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &236813588
 SpriteMask:
@@ -613,8 +613,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273566507}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &273566511
 SpriteMask:
@@ -1032,8 +1032,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348318139}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &348318143
 SpriteMask:
@@ -1369,8 +1369,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562468231}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &562468235
 SpriteMask:
@@ -1706,8 +1706,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692979878}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &692979882
 SpriteMask:
@@ -2176,8 +2176,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967111387}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &967111391
 SpriteMask:
@@ -2391,7 +2391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &996866912
 MonoBehaviour:
@@ -2405,6 +2405,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415ac96cf373830449aca84f818b240d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  piecesWithProperty: []
+  selectedPiece: {fileID: 0}
+  selectedPieceProp:
+    pieceGameObject: {fileID: 0}
+    rightPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1095136008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2556,8 +2561,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102070236}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1102070240
 SpriteMask:
@@ -2975,8 +2980,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1226473912}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1226473916
 SpriteMask:
@@ -3476,8 +3481,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331980901}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1331980905
 SpriteMask:
@@ -3673,7 +3678,7 @@ RectTransform:
   m_Children:
   - {fileID: 743450144}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3831,8 +3836,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463265527}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1463265531
 SpriteMask:
@@ -4004,8 +4009,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476815369}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1476815373
 SpriteMask:
@@ -4177,8 +4182,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481404637}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1481404641
 SpriteMask:
@@ -4350,8 +4355,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484070756}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1484070760
 SpriteMask:
@@ -4523,8 +4528,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595476731}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1595476735
 SpriteMask:
@@ -4996,8 +5001,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722205543}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1722205547
 SpriteMask:
@@ -5330,8 +5335,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839060610}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1839060614
 SpriteMask:
@@ -5585,8 +5590,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897453253}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1897453257
 SpriteMask:
@@ -5758,8 +5763,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1953701053}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1953701057
 SpriteMask:
@@ -6013,8 +6018,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983620195}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1983620199
 SpriteMask:
@@ -6186,8 +6191,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994215474}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &1994215478
 SpriteMask:
@@ -6359,8 +6364,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036409897}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &2036409901
 SpriteMask:
@@ -6532,8 +6537,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087189454}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &2087189458
 SpriteMask:
@@ -6705,8 +6710,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088773396}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &2088773400
 SpriteMask:
@@ -6878,8 +6883,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113875363}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1788756239
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!331 &2113875367
 SpriteMask:

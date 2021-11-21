@@ -65,18 +65,17 @@ public class QuestionLink1To1 : MonoBehaviour
                     point1 = null;
                 }  
             }
-        }
-        
-        //Анимация перетаскивания линии за курсором мыши
-        if(point1 != null && point2 == null)
-        {
-            var point1_tr = point1.GetComponent<Transform>();
-            var point1_lr = point1.GetComponent<LineRenderer>();
-            
-            point1_lr.positionCount = 2;
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            point1_lr.SetPosition(0, point1_tr.position);
-            point1_lr.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0f));
+
+            //Анимация перетаскивания линии за курсором мыши
+            if(point1 != null && point2 == null)
+            {
+                var point1_tr = point1.GetComponent<Transform>();
+                var point1_lr = point1.GetComponent<LineRenderer>();
+                
+                point1_lr.positionCount = 2;
+                point1_lr.SetPosition(0, point1_tr.position);
+                point1_lr.SetPosition(1, new Vector3(mousePos.x, mousePos.y, 0f));
+            }
         }
     }
 

@@ -43,3 +43,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PiecesSortingLayer
+    uniqueID: 2506211057
+    locked: 0

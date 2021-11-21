@@ -3,7 +3,9 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
+//https://www.youtube.com/watch?v=KHZFpRL3Xzc
 public class QuestionPuzzle : MonoBehaviour
 {
     public List<PieceWithProperty> piecesWithProperty = new List<PieceWithProperty>();
@@ -30,6 +32,7 @@ public class QuestionPuzzle : MonoBehaviour
             if(hit.transform != null && hit.transform.CompareTag("Puzzle"))
             {
                 selectedPiece = hit.transform.gameObject;
+                selectedPiece.GetComponent<SortingGroup>().sortingOrder = 1;
             }
         }
 
@@ -51,6 +54,7 @@ public class QuestionPuzzle : MonoBehaviour
             if(Vector3.Distance(selectedPiece.transform.position, selectedPieceProp.rightPosition) < 0.5f)
             {
                 selectedPiece.transform.position = selectedPieceProp.rightPosition;
+                selectedPiece.GetComponent<SortingGroup>().sortingOrder = 0;
             }
         }
     }
