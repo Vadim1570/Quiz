@@ -1,5 +1,10 @@
+
 using UnityEngine;
+
 using UnityEngine.SceneManagement;
+
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +17,29 @@ public class GameManager : MonoBehaviour
     {
         ScoreKeeper.GetScoreKeeper().Score =+ hitpount;
     }
+
+  public void BtQuit()
+    {
+       Application.Quit();
+    }
+ 
+
+ public void OpenAudio()
+    {
+        Application.OpenURL("https://youtube.com/playlist?list=PLsDUIWlwo18rUD1-3R3QoSDn3dzQtfGrT");
+    }
+
+    public void OpenVideo()
+    {
+        Application.OpenURL("https://youtube.com/playlist?list=PLsDUIWlwo18rcBp4t99VibngiWnQHtyEo");
+    }
+
+      public void OpenQuiz()
+    {
+      SceneManager.LoadScene("Level1");
+    }
+
+
 }
 
 public class ScoreKeeper
