@@ -47,3 +47,6 @@ TagManager:
   - name: PiecesSortingLayer
     uniqueID: 2506211057
     locked: 0
+  - name: PointsSortingLayer
+    uniqueID: 2541609173
+    locked: 0
