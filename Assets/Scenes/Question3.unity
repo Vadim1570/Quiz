@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1834542}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1682756617}
+        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
+        m_MethodName: SetSelectedAnswearAndLoadNextScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0411\u0430\u0440\u0434\u041E\u043A\u043E\u0432\u043A\u0430"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1834542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,7 +413,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138738070}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1682756617}
+        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
+        m_MethodName: SetSelectedAnswearAndLoadNextScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0431\u0430\u0440\u0434\u0430\u043A\u043E\u0432\u043A\u0430"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &138738070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,7 +722,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 641173808}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1682756617}
+        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
+        m_MethodName: SetSelectedAnswearAndLoadNextScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0431\u0430\u0440\u0434\u042B\u043A\u043E\u0432\u043A\u0430"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &641173808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,6 +1178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1682756616}
   - component: {fileID: 1682756615}
+  - component: {fileID: 1682756617}
   m_Layer: 0
   m_Name: SceneScript
   m_TagString: Untagged
@@ -1175,6 +1212,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682756617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682756614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dcccc40921df04e8547b62efe692f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextSceneName: Question4
+  SelectedAnswear: 
+  RightAnswear: "\u0431\u0430\u0440\u0434\u0430\u043A\u043E\u0432\u043A\u0430"
 --- !u!1 &1918328240
 GameObject:
   m_ObjectHideFlags: 0

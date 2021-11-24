@@ -337,7 +337,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 480114919}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1608235814}
+        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
+        m_MethodName: SetSelectedAnswearAndLoadNextScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0432 100 \u0440\u0430\u0437"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &480114919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,7 +629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 791784652}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1608235814}
+        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
+        m_MethodName: SetSelectedAnswearAndLoadNextScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u043D\u0430 200 \u0442\u044B\u0441\u044F\u0447 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &791784652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -820,6 +844,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608235813}
   - component: {fileID: 1608235812}
+  - component: {fileID: 1608235814}
   m_Layer: 0
   m_Name: SceneScript
   m_TagString: Untagged
@@ -853,6 +878,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608235814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608235811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dcccc40921df04e8547b62efe692f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextSceneName: Question2
+  SelectedAnswear: 
+  RightAnswear: "\u0432 290 \u0440\u0430\u0437"
 --- !u!1 &1898367338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,7 +1328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2097653167}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1608235814}
+        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
+        m_MethodName: SetSelectedAnswearAndLoadNextScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0432 290 \u0440\u0430\u0437"
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2097653167
 MonoBehaviour:
   m_ObjectHideFlags: 0
