@@ -934,7 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dcccc40921df04e8547b62efe692f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextSceneName: Question10
+  NextSceneName: Question9
   SelectedAnswear: 
   RightAnswear: 2
 --- !u!1 &1041519913

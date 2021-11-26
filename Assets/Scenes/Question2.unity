@@ -2270,8 +2270,8 @@ MonoBehaviour:
     Point2: {fileID: 1030644051}
   - Point1: {fileID: 1494285533}
     Point2: {fileID: 1112804441}
-  point1: {fileID: 0}
-  point2: {fileID: 0}
+  point1: {fileID: 426504373}
+  point2: {fileID: 980113813}
   alreadylinkedPoints: []
 --- !u!4 &1219160926
 Transform:
