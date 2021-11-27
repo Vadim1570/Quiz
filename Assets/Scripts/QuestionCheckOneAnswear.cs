@@ -8,6 +8,8 @@ public class QuestionCheckOneAnswear : MonoBehaviour
     public string NextSceneName;
     public string SelectedAnswear;
     public string RightAnswear;
+    
+    private static GameObject chekBt;
 
     public void SetSelectedAnswear(string answear)
     {
@@ -24,7 +26,13 @@ public class QuestionCheckOneAnswear : MonoBehaviour
     {
         if(SelectedAnswear.ToLower() == RightAnswear.ToLower() )
             ScoreKeeper.GetScoreKeeper().Score += 1;
-
-        SceneManager.LoadScene(sceneName);
+            
+        //SceneManager.LoadScene(sceneName);
+    }
+    public void SelectedButton(GameObject targetObject)
+    {
+        Debug.Log(targetObject);
+        chekBt=targetObject;
+        
     }
 }
