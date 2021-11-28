@@ -9,6 +9,7 @@ public class QuestionCheckOneAnswear : MonoBehaviour
     public GameObject RightAnswear;
     public GameObject SelectedAnswear;
     public GameObject[] Answears;
+    public Material AnswearMaterial;
 
     public void SetAnswear(GameObject answear)
     {
@@ -22,8 +23,25 @@ public class QuestionCheckOneAnswear : MonoBehaviour
 
     public IEnumerator SaveAnswearAndLoadSceneAsync(string sceneName)
     {
-        foreach(var a in Answears)
-            a.GetComponent<Button>().interactable = false;
+        //
+        foreach(var answear in Answears)
+        {
+            //var button = answear.GetComponent<Button>();
+            //button.interactable = false;
+            //var colors = button.colors;
+            //if(answear == RightAnswear)
+            //    colors.normalColor = Color.green;
+            //else
+            //    colors.normalColor = Color.red;  
+            //button.colors = colors;
+            var image = answear.GetComponent<Image>();
+            image.material = AnswearMaterial;
+            if(answear == RightAnswear)
+               image.color = Color.green;
+            else
+               image.color = Color.red;  
+        }
+            
 
         //RightAnswear.GetComponent<Button>().interactable = false;
         //SelectedAnswear.GetComponent<Button>().interactable = false;
@@ -31,7 +49,7 @@ public class QuestionCheckOneAnswear : MonoBehaviour
         if(SelectedAnswear == RightAnswear )
             ScoreKeeper.GetScoreKeeper().Score += 1;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(sceneName);
     }
 }

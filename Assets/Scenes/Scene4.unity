@@ -756,6 +756,7 @@ MonoBehaviour:
   - {fileID: 1982666634}
   - {fileID: 128412356}
   - {fileID: 608823563}
+  AnswearMaterial: {fileID: 2100000, guid: 7d18fb545e0bcaa4b86310f05fbdffcc, type: 3}
 --- !u!1 &748798046
 GameObject:
   m_ObjectHideFlags: 0
