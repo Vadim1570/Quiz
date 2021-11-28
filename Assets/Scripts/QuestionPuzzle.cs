@@ -10,6 +10,8 @@ public class QuestionPuzzle : MonoBehaviour
 {
     public List<PieceWithProperty> piecesWithProperty = new List<PieceWithProperty>();
     public GameObject selectedPiece;
+    int OIL =1;
+    public bool Selected;
 
     void Start()
     {
@@ -31,13 +33,17 @@ public class QuestionPuzzle : MonoBehaviour
             if(hit.transform != null && hit.transform.CompareTag("Puzzle"))
             {
                 selectedPiece = hit.transform.gameObject;
-                selectedPiece.GetComponent<SortingGroup>().sortingOrder = 1;
+                Selected = true;
+                selectedPiece.GetComponent<SortingGroup>().sortingOrder = OIL;
+                OIL++;
+
             }
         }
 
         //Забываем о выбранном элементе пазла
         if(Input.GetMouseButtonUp(0))
         {
+            Selected = false;
             selectedPiece = null;
         }
 
@@ -50,10 +56,10 @@ public class QuestionPuzzle : MonoBehaviour
             selectedPiece.transform.position = new Vector3(mousePoint.x, mousePoint.y, 0f);
 
             //Магнитим выбранный элемент пазла
-            if(Vector3.Distance(selectedPiece.transform.position, selectedPieceProp.rightPosition) < 0.5f)
+            if(Vector3.Distance(selectedPiece.transform.position, selectedPieceProp.rightPosition) < 0.2f)
             {
                 selectedPiece.transform.position = selectedPieceProp.rightPosition;
-                selectedPiece.GetComponent<SortingGroup>().sortingOrder = 0;
+                //selectedPiece.GetComponent<SortingGroup>().sortingOrder = 0;
             }
         }
     }

@@ -11,9 +11,23 @@ public class QuestionCheckOneAnswear : MonoBehaviour
     public GameObject[] Answears;
     public Material AnswearMaterial;
 
-    public void SetAnswear(GameObject answear)
+    public void SetAnswear(GameObject selectedAnswear)
     {
-        this.SelectedAnswear = answear;
+        this.SelectedAnswear = selectedAnswear;
+        foreach(var answear in Answears)
+        {
+            var image = answear.GetComponent<Image>();
+            if(answear == selectedAnswear)
+            {
+                image.material = AnswearMaterial;
+                image.color = Color.yellow;  
+            }
+            else
+            {
+                image.material = null;
+                image.color = Color.white;  
+            } 
+        }
     }
 
     public void SaveAnswearAndLoadScene(string sceneName)
@@ -26,14 +40,6 @@ public class QuestionCheckOneAnswear : MonoBehaviour
         //
         foreach(var answear in Answears)
         {
-            //var button = answear.GetComponent<Button>();
-            //button.interactable = false;
-            //var colors = button.colors;
-            //if(answear == RightAnswear)
-            //    colors.normalColor = Color.green;
-            //else
-            //    colors.normalColor = Color.red;  
-            //button.colors = colors;
             var image = answear.GetComponent<Image>();
             image.material = AnswearMaterial;
             if(answear == RightAnswear)
