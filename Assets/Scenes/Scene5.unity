@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 408680662}
   - component: {fileID: 408680665}
   m_Layer: 5
-  m_Name: Button2
+  m_Name: bt2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 612634343}
   - component: {fileID: 612634346}
   m_Layer: 5
-  m_Name: Button5
+  m_Name: bt5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1821,7 +1821,7 @@ GameObject:
   - component: {fileID: 1430328774}
   - component: {fileID: 1430328777}
   m_Layer: 5
-  m_Name: Button4
+  m_Name: bt4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2122,7 +2122,7 @@ GameObject:
   - component: {fileID: 1528385419}
   - component: {fileID: 1528385422}
   m_Layer: 5
-  m_Name: Button3
+  m_Name: bt3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2355,7 +2355,7 @@ GameObject:
   - component: {fileID: 1808017735}
   - component: {fileID: 1808017739}
   m_Layer: 5
-  m_Name: Button1
+  m_Name: bt1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2603,7 +2603,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Question6
+          m_StringArgument: Scene6
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1901819475

@@ -316,7 +316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -76.66665, y: -68.00006}
+  m_AnchoredPosition: {x: -76.666626, y: -68.00006}
   m_SizeDelta: {x: 141, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &294029723
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 348587545}
   - component: {fileID: 348587544}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btReload
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +505,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: FirstScene
+          m_StringArgument: Scene0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &348587545

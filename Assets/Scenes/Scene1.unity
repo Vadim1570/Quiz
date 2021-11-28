@@ -340,19 +340,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1608235814}
         m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
-        m_MethodName: SetSelectedAnswearAndLoadNextScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\u0432 100 \u0440\u0430\u0437"
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1608235814}
-        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
-        m_MethodName: SelectedButton
+        m_MethodName: SetAnswear
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 480114916}
@@ -644,19 +632,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1608235814}
         m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
-        m_MethodName: SetSelectedAnswearAndLoadNextScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\u043D\u0430 200 \u0442\u044B\u0441\u044F\u0447 \u0447\u0435\u043B\u043E\u0432\u0435\u043A"
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1608235814}
-        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
-        m_MethodName: SelectedButton
+        m_MethodName: SetAnswear
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 791784649}
@@ -799,16 +775,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1608235812}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1608235814}
+        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
+        m_MethodName: SaveAnswearAndLoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Question2
+          m_StringArgument: Scene2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &929451534
@@ -1059,9 +1035,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8dcccc40921df04e8547b62efe692f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextSceneName: Question2
-  SelectedAnswear: 
-  RightAnswear: "\u0432 290 \u0440\u0430\u0437"
+  RightAnswear: {fileID: 2097653164}
+  SelectedAnswear: {fileID: 0}
+  Answears:
+  - {fileID: 2097653164}
+  - {fileID: 480114916}
+  - {fileID: 791784649}
 --- !u!1 &1773744487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,19 +1559,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1608235814}
         m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
-        m_MethodName: SetSelectedAnswearAndLoadNextScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\u0432 290 \u0440\u0430\u0437"
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1608235814}
-        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
-        m_MethodName: SelectedButton
+        m_MethodName: SetAnswear
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2097653164}

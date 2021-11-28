@@ -2,37 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class QuestionCheckOneAnswear : MonoBehaviour
 {
-    public string NextSceneName;
-    public string SelectedAnswear;
-    public string RightAnswear;
-    
-    private static GameObject chekBt;
+    public GameObject RightAnswear;
+    public GameObject SelectedAnswear;
+    public GameObject[] Answears;
 
-    public void SetSelectedAnswear(string answear)
+    public void SetAnswear(GameObject answear)
     {
         this.SelectedAnswear = answear;
-    }
-
-    public void SetSelectedAnswearAndLoadNextScene(string answear)
-    {
-        this.SelectedAnswear = answear;
-        SaveAnswearAndLoadScene(NextSceneName);
     }
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
-        if(SelectedAnswear.ToLower() == RightAnswear.ToLower() )
-            ScoreKeeper.GetScoreKeeper().Score += 1;
-            
-        //SceneManager.LoadScene(sceneName);
+        StartCoroutine(SaveAnswearAndLoadSceneAsync(sceneName));
     }
-    public void SelectedButton(GameObject targetObject)
+
+    public IEnumerator SaveAnswearAndLoadSceneAsync(string sceneName)
     {
-        Debug.Log(targetObject);
-        chekBt=targetObject;
-        
+        foreach(var a in Answears)
+            a.GetComponent<Button>().interactable = false;
+
+        //RightAnswear.GetComponent<Button>().interactable = false;
+        //SelectedAnswear.GetComponent<Button>().interactable = false;
+
+        if(SelectedAnswear == RightAnswear )
+            ScoreKeeper.GetScoreKeeper().Score += 1;
+
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(sceneName);
     }
 }
