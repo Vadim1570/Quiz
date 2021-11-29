@@ -14,6 +14,8 @@ public class QuestionCheckOneAnswear : MonoBehaviour
     public void SetAnswear(GameObject selectedAnswear)
     {
         this.SelectedAnswear = selectedAnswear;
+
+        //Подсвечиваю выбранный ответ желтым, а другие ответы сбрасыаю до перв. состояния
         foreach(var answear in Answears)
         {
             var image = answear.GetComponent<Image>();
@@ -32,29 +34,25 @@ public class QuestionCheckOneAnswear : MonoBehaviour
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
-        StartCoroutine(SaveAnswearAndLoadSceneAsync(sceneName));
-    }
-
-    public IEnumerator SaveAnswearAndLoadSceneAsync(string sceneName)
-    {
-        //
+        //Подветить правильные ответы зеленым, а неверные красным
         foreach(var answear in Answears)
         {
             var image = answear.GetComponent<Image>();
             image.material = AnswearMaterial;
             if(answear == RightAnswear)
-               image.color = Color.green;
+               image.color = new Color(178f/255f,209f/255f,121f/255f);
             else
-               image.color = Color.red;  
+               image.color = new Color(183f/255f,80f/255f,84f/255f);  
         }
-            
-
-        //RightAnswear.GetComponent<Button>().interactable = false;
-        //SelectedAnswear.GetComponent<Button>().interactable = false;
 
         if(SelectedAnswear == RightAnswear )
             ScoreKeeper.GetScoreKeeper().Score += 1;
 
+        StartCoroutine(LoadSceneAsync(sceneName));
+    }
+
+    public IEnumerator LoadSceneAsync(string sceneName)
+    {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene(sceneName);
     }

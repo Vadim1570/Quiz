@@ -4,75 +4,112 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 //https://www.youtube.com/watch?v=KHZFpRL3Xzc
 public class QuestionDragAnswear : MonoBehaviour
-{
-    public List<StampWithProperty> stampsWithProperty = new List<StampWithProperty>();
+{    //Заранее заполненные правильные ответы
+    public StampPair [] rightAnswears;
     public GameObject selectedStamp;
 
+    //Сюда запоминаем уже положенные ответы между собой точки
+    public List<StampPair> alreadyPutStamps = new List<StampPair>();    
+    #region Private methods
+    private bool IsAlreadyLinked(GameObject stamp)
+    {
+        foreach(var pair in alreadyPutStamps)
+        {
+            if(stamp == pair.Stamp1 || stamp == pair.Stamp2)
+            return true;
+        }
+        return false;
+    }
+
+    private void RemoveFromAlreadyLinked(GameObject stamp)
+    {
+        var pairToRemove = alreadyPutStamps.FirstOrDefault(pair => stamp == pair.Stamp1 || stamp == pair.Stamp2);
+        if (pairToRemove != null)
+            alreadyPutStamps.Remove(pairToRemove);
+    }
+    #endregion
     void Start()
     {
-        foreach(var piece in  GameObject.FindGameObjectsWithTag("Stamp"))
-        {
-            //Запоминаем как расставлены кусочки пазла
-            stampsWithProperty.Add(new StampWithProperty() { stampGameObject = piece, rightPosition = piece.transform.position });
-            //Разбросать элементы пазла
-            piece.transform.position = new Vector3(Random.Range(-2.18f, 1.32f), Random.Range(-2.72f, -3.72f));
-        }
+    }
+
+    public void OnAnswearDrag(BaseEventData eventData)
+    {
+        selectedStamp = eventData.selectedObject;
     }
 
     void Update()
     {
-        //Запоминаем выбранный элемент пазла
-        if(Input.GetMouseButtonDown(0))
-        {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if(hit.transform != null && hit.transform.CompareTag("Stamp"))
-            {
-                selectedStamp = hit.transform.gameObject;
-                //selectedStamp.GetComponent<SortingGroup>().sortingOrder = 1;
-            }
-        }
-
         //Забываем о выбранном элементе пазла
         if(Input.GetMouseButtonUp(0))
         {
+            //Магнитим выбранный элемент пазла
+            if(selectedStamp != null)
+            {
+                RemoveFromAlreadyLinked(selectedStamp);
+                foreach(var rightStamp in rightAnswears)
+                {
+                    var holeStamp = rightStamp.Stamp2;
+                    
+                    if(Vector2.Distance(selectedStamp.transform.position, holeStamp.transform.position) < 0.2f)
+                    {
+                        selectedStamp.transform.position = holeStamp.transform.position;
+                        alreadyPutStamps.Add(new StampPair() { Stamp1 = selectedStamp, Stamp2 = holeStamp});
+                    }
+                }
+            }
+
             selectedStamp = null;
         }
 
         if(selectedStamp != null)
         {
-            var selectedStampProp = stampsWithProperty.FirstOrDefault(pp => pp.stampGameObject == selectedStamp);
-
             //Двиагем выбранный элемент пазла
             var mousePoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             selectedStamp.transform.position = new Vector3(mousePoint.x, mousePoint.y, 0f);
-
-            //Магнитим выбранный элемент пазла
-            foreach(var stampProp in stampsWithProperty)
-            {
-                if(Vector3.Distance(selectedStamp.transform.position, stampProp.rightPosition) < 0.5f)
-                {
-                    selectedStamp.transform.position = stampProp.rightPosition;
-                    //selectedStamp.GetComponent<SortingGroup>().sortingOrder = 0;
-                }
-            }
         }
     }
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
-        //Если все кусочки лежат в правильных местах, то прибавляем очко
-        if(stampsWithProperty.Count() == stampsWithProperty.Count(p => p.stampGameObject.transform.position == p.rightPosition))
-            ScoreKeeper.GetScoreKeeper().Score += 1;
+        bool isAnswearCorrect = true;
 
+        foreach(var put in alreadyPutStamps)
+        {
+            var image = put.Stamp1.GetComponent<Image>();
+            //Каждую связанную пару точек, проверим в массиве правильных ответов
+            if(rightAnswears.Count(right => right.Stamp1 == put.Stamp1 && right.Stamp2 == put.Stamp2) == 0)
+            {
+                image.color = new Color(183f/255f,80f/255f,84f/255f);  
+            }
+            else
+            {
+                isAnswearCorrect = false;
+                image.color = new Color(178f/255f,209f/255f,121f/255f);
+            }
+        }
+
+        if(isAnswearCorrect)
+        {
+            ScoreKeeper.GetScoreKeeper().Score += 1;
+        }
+
+        StartCoroutine(LoadSceneAsync(sceneName));
+    }
+
+    public IEnumerator LoadSceneAsync(string sceneName)
+    {
+        yield return new WaitForSeconds(5);
         SceneManager.LoadScene(sceneName);
     }
 }
 
 [System.Serializable]
-public class StampWithProperty {
-    public GameObject stampGameObject;
-    public Vector3 rightPosition;
+public class StampPair {
+    public GameObject Stamp1;
+    public GameObject Stamp2;
 }

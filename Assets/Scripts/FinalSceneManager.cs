@@ -9,13 +9,16 @@ public class FinalSceneManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        ScoreKeeper.GetScoreKeeper().Score=0;
         SceneManager.LoadScene(sceneName);
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        YourScoreText.text = $"Ваш счет: {ScoreKeeper.GetScoreKeeper().Score}";
+
+        YourScoreText.text = $"{ScoreKeeper.GetScoreKeeper().Score}";
     }
 
     // Update is called once per frame
