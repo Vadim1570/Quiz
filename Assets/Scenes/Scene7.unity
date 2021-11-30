@@ -788,7 +788,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 04831422253f08949bc33acca0fb9b04, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1746,6 +1746,7 @@ MonoBehaviour:
   piecesWithProperty: []
   selectedPiece: {fileID: 0}
   Selected: 0
+  anim: {fileID: 279726509}
 --- !u!114 &996866913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3611,6 +3612,7 @@ GameObject:
   - component: {fileID: 1723017396}
   - component: {fileID: 1723017395}
   - component: {fileID: 1723017394}
+  - component: {fileID: 1723017397}
   m_Layer: 5
   m_Name: InputField
   m_TagString: Untagged
@@ -3742,6 +3744,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723017392}
   m_CullTransparentMesh: 1
+--- !u!95 &1723017397
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1723017392}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15fe1d552e4ec5a4fa0a203d0458f2eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1754194785
 GameObject:
   m_ObjectHideFlags: 0

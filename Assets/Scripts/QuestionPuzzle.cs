@@ -16,6 +16,7 @@ public class QuestionPuzzle : MonoBehaviour
     public GameObject selectedPiece;
     int OIL =1;
     public bool Selected;
+    public Animator anim;
 
     void Start()
     {
@@ -90,7 +91,8 @@ public class QuestionPuzzle : MonoBehaviour
         }
         else
         {
-            image.color = new Color(183f/255f,80f/255f,84f/255f); 
+            image.color = new Color(183f/255f,80f/255f,84f/255f);
+            anim.SetTrigger("play"); 
         }
 
         StartCoroutine(LoadSceneAsync(sceneName));
