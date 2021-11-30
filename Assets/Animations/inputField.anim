@@ -32,11 +32,11 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.56666666
         value: -42.72505
-        inSlope: 344.64328
-        outSlope: 344.64328
+        inSlope: 37.678604
+        outSlope: 37.678604
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.06806866
+        inWeight: 0.10217628
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -97,11 +97,11 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.56666666
         value: -42.72505
-        inSlope: 344.64328
-        outSlope: 344.64328
+        inSlope: 37.678604
+        outSlope: 37.678604
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.06806866
+        inWeight: 0.10217628
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2

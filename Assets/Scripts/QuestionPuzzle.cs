@@ -17,6 +17,7 @@ public class QuestionPuzzle : MonoBehaviour
     int OIL =1;
     public bool Selected;
     public Animator anim;
+    bool collect = false; //тригер собраности пазлов, чтобы анимация Правильный ответ Марка не выводилась, если его не собирали
 
     void Start()
     {
@@ -70,10 +71,11 @@ public class QuestionPuzzle : MonoBehaviour
                 selectedPiece.transform.position = selectedPieceProp.rightPosition;
                 selectedPiece.GetComponent<SortingGroup>().sortingOrder = 0;
 
-                //Отображаем тестовое поле, если все кусочки лежат в правильных местах, то прибавляем очко
+                //Отображаем тестовое поле, если все кусочки лежат в правильных местах, то выводим текстовое поле для ввода ответа
                 if(piecesWithProperty.Count() == piecesWithProperty.Count(p => p.pieceGameObject.transform.position == p.rightPosition))
                 {
                     //AnwearInput.ActivateInputField();
+                    collect = true;
                     AnwearInput.gameObject.SetActive(true);
                 }
             }
@@ -82,20 +84,23 @@ public class QuestionPuzzle : MonoBehaviour
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
+        if (collect == true)
+        {
         var image = AnwearInput.GetComponent<Image>();
         image.material = AnswearMaterial;
-        if(AnwearInput.text.ToLower() == RightAnswear.ToLower())
-        {
-            image.color = new Color(178f/255f,209f/255f,121f/255f);
-            ScoreKeeper.GetScoreKeeper().Score += 1;
+            if (AnwearInput.text.ToLower() == RightAnswear.ToLower()) 
+            {
+                image.color = new Color(178f/255f,209f/255f,121f/255f);
+                ScoreKeeper.GetScoreKeeper().Score += 1;
+            }
+            else 
+            {
+                image.color = new Color(183f/255f,80f/255f,84f/255f);
+                anim.SetTrigger("play"); 
+            }
         }
-        else
-        {
-            image.color = new Color(183f/255f,80f/255f,84f/255f);
-            anim.SetTrigger("play"); 
-        }
-
         StartCoroutine(LoadSceneAsync(sceneName));
+    
     }
 
     public IEnumerator LoadSceneAsync(string sceneName)
