@@ -47,6 +47,7 @@
      <Compile Include="Assets\Scripts\QuestionDragAnswear.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\QuestionLink1To1.cs" />
+     <Compile Include="Assets\Scripts\SoundBt.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.23f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

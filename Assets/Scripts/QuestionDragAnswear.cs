@@ -47,6 +47,7 @@ public class QuestionDragAnswear : MonoBehaviour
         //Забываем о выбранном элементе пазла
         if(Input.GetMouseButtonUp(0))
         {
+            
             //Магнитим выбранный элемент пазла
             if(selectedStamp != null)
             {
@@ -58,7 +59,9 @@ public class QuestionDragAnswear : MonoBehaviour
                     if(Vector2.Distance(selectedStamp.transform.position, holeStamp.transform.position) < 0.2f)
                     {
                         selectedStamp.transform.position = holeStamp.transform.position;
+                        
                         alreadyPutStamps.Add(new StampPair() { Stamp1 = selectedStamp, Stamp2 = holeStamp});
+                        //GetComponent<SoundBt>().ChoicePlace();
                     }
                 }
             }
