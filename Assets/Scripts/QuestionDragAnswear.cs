@@ -41,6 +41,10 @@ public class QuestionDragAnswear : MonoBehaviour
     {
         selectedStamp = eventData.selectedObject;
     }
+    public void OnPointerDown(BaseEventData eventData)
+    {
+        GameObject.Find("audioClick").GetComponent<SoundBt>().ClickSound();
+    }
 
     void Update()
     {
@@ -62,6 +66,7 @@ public class QuestionDragAnswear : MonoBehaviour
                         
                         alreadyPutStamps.Add(new StampPair() { Stamp1 = selectedStamp, Stamp2 = holeStamp});
                         //GetComponent<SoundBt>().ChoicePlace();
+                        GameObject.Find("audioClick").GetComponent<SoundBt>().ChoicePlace();
                     }
                 }
             }
@@ -79,6 +84,18 @@ public class QuestionDragAnswear : MonoBehaviour
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
+        #region Блокируем все элементы на форме и останавливаем плеер
+        GameObject.Find("audioPoem").GetComponent<SoundBt>().PoemSoundStop();
+        var OK = EventSystem.current.currentSelectedGameObject;
+        if(OK != null)
+            OK.GetComponent<Button>().enabled = false;
+        foreach(var pair in rightAnswears)
+        {
+            if(pair.Stamp1 != null)
+                pair.Stamp1.GetComponent<Button>().enabled = false;
+        }
+        #endregion 
+
         bool isAnswearCorrect = true;
 
         foreach(var put in alreadyPutStamps)

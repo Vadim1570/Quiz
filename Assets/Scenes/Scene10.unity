@@ -274,6 +274,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 996866910}
+          m_TargetAssemblyTypeName: QuestionDragAnswear, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &159094657
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,6 +939,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 2006736778}
+        m_TargetAssemblyTypeName: SoundBt, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &720187338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,6 +1294,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 996866910}
+          m_TargetAssemblyTypeName: QuestionDragAnswear, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &838491150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1561,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 996866910}
+          m_TargetAssemblyTypeName: QuestionDragAnswear, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &884074454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1794,22 @@ MonoBehaviour:
         - m_Target: {fileID: 996866910}
           m_TargetAssemblyTypeName: QuestionDragAnswear, Assembly-CSharp
           m_MethodName: OnAnswearDrag
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 996866910}
+          m_TargetAssemblyTypeName: QuestionDragAnswear, Assembly-CSharp
+          m_MethodName: OnPointerDown
           m_Mode: 0
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3205,6 +3281,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 996866910}
+          m_TargetAssemblyTypeName: QuestionDragAnswear, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1869115142
 GameObject:
   m_ObjectHideFlags: 0
@@ -3576,6 +3668,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 996866910}
+          m_TargetAssemblyTypeName: QuestionDragAnswear, Assembly-CSharp
+          m_MethodName: OnPointerDown
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2006736775
 GameObject:
   m_ObjectHideFlags: 0
@@ -3718,8 +3826,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   poemFX: {fileID: 8300000, guid: acf266584445f34428c8f19c5747bf17, type: 3}
   clickFX: {fileID: 8300000, guid: 6f7b9788a79c08d46aba58e7d8e8f3a4, type: 3}
-  choiceplaceFX: {fileID: 0}
+  choiceplaceFX: {fileID: 8300000, guid: ec81db59eecba5a44b627fac8637bd0f, type: 3}
   myFx: {fileID: 2006736776}
+  winFX: {fileID: 8300000, guid: a4c699fdf6103de489e416eb026fd23f, type: 3}
+  errorFX: {fileID: 8300000, guid: 96f045890e51ed840a9f0f5e90efca0e, type: 3}
 --- !u!1 &2029097869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3943,6 +4053,8 @@ MonoBehaviour:
   clickFX: {fileID: 8300000, guid: 6f7b9788a79c08d46aba58e7d8e8f3a4, type: 3}
   choiceplaceFX: {fileID: 0}
   myFx: {fileID: 2098200207}
+  winFX: {fileID: 8300000, guid: a4c699fdf6103de489e416eb026fd23f, type: 3}
+  errorFX: {fileID: 8300000, guid: 96f045890e51ed840a9f0f5e90efca0e, type: 3}
 --- !u!1 &2101604014
 GameObject:
   m_ObjectHideFlags: 0
