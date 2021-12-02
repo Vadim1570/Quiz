@@ -4151,18 +4151,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 996866910}
-        m_TargetAssemblyTypeName: QuestionDragAnswear, Assembly-CSharp
-        m_MethodName: SaveAnswearAndLoadScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Scene11
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2006736778}
         m_TargetAssemblyTypeName: SoundBt, Assembly-CSharp
         m_MethodName: ClickSound
@@ -4173,6 +4161,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 996866912}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Scene11
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2101604018
