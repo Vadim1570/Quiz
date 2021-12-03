@@ -48,6 +48,25 @@ public AudioClip errorFX;
 
     }
 
+    public IEnumerator winSound()
+    {
+    // Start is called before the first frame update
+     yield return new WaitForSeconds(0.1f);// продолжить примерно через 100ms
+     myFx.PlayOneShot(winFX);
+     
+
+    }
+
+
+    public IEnumerator errorSound()
+    {
+    // Start is called before the first frame update
+     yield return new WaitForSeconds(0.1f);// продолжить примерно через 100ms
+     myFx.PlayOneShot(errorFX);
+     
+
+    }
+
     public async void ChoicePlaceAsync()
     {
         await Task.Run(() =>

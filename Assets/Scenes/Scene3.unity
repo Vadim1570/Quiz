@@ -363,9 +363,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1682756615}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1682756617}
+        m_TargetAssemblyTypeName: QuestionCheckOneAnswear, Assembly-CSharp
+        m_MethodName: SaveAnswearAndLoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -500,7 +500,6 @@ GameObject:
   - component: {fileID: 138738071}
   - component: {fileID: 138738070}
   - component: {fileID: 138738069}
-  - component: {fileID: 138738072}
   m_Layer: 5
   m_Name: btTrue
   m_TagString: Untagged
@@ -622,24 +621,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138738067}
   m_CullTransparentMesh: 1
---- !u!114 &138738072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 138738067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 0.9395391, b: 0, a: 1}
-  outlineWidth: 5
-  precomputeOutline: 1
-  bakeKeys: []
-  bakeValues: []
 --- !u!1 &355161934
 GameObject:
   m_ObjectHideFlags: 0

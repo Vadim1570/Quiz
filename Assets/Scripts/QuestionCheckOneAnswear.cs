@@ -40,13 +40,23 @@ public class QuestionCheckOneAnswear : MonoBehaviour
             var image = answear.GetComponent<Image>();
             image.material = AnswearMaterial;
             if(answear == RightAnswear)
-               image.color = new Color(178f/255f,209f/255f,121f/255f);
+               {
+                   
+                   image.color = new Color(178f/255f,209f/255f,121f/255f);
+                }
             else
-               image.color = new Color(183f/255f,80f/255f,84f/255f);  
+               {
+                   //GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound();
+                   image.color = new Color(183f/255f,80f/255f,84f/255f); 
+                   } 
         }
 
         if(SelectedAnswear == RightAnswear )
+            {
             ScoreKeeper.GetScoreKeeper().Score += 1;
+            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
+            }
+            else{StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());}
 
         StartCoroutine(LoadSceneAsync(sceneName));
     }
