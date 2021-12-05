@@ -3,6 +3,8 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class QuestionLink1To1 : MonoBehaviour
 {
@@ -16,12 +18,12 @@ public class QuestionLink1To1 : MonoBehaviour
     public GameObject point2 = null;
     
     //Сюда запоминаем уже связанные между собой точки
-    public List<PointPair> alreadylinkedPoints = new List<PointPair>();
+    public List<PointPair> alreadylinked = new List<PointPair>();
 
     #region Private methods
     private bool IsAlreadyLinked(GameObject point)
     {
-        foreach(var pair in alreadylinkedPoints)
+        foreach(var pair in alreadylinked)
         {
             if(point == pair.Point1 || point == pair.Point2)
             return true;
@@ -31,9 +33,9 @@ public class QuestionLink1To1 : MonoBehaviour
 
     private void RemoveFromAlreadyLinked(GameObject point)
     {
-        var pairToRemove = alreadylinkedPoints.FirstOrDefault(pair => point == pair.Point1 || point == pair.Point2);
+        var pairToRemove = alreadylinked.FirstOrDefault(pair => point == pair.Point1 || point == pair.Point2);
         if (pairToRemove != null)
-            alreadylinkedPoints.Remove(pairToRemove);
+            alreadylinked.Remove(pairToRemove);
     }
     #endregion
 
@@ -61,6 +63,7 @@ public class QuestionLink1To1 : MonoBehaviour
                     if(point.GetComponent<LineRenderer>() != null && point.GetComponent<LineRenderer>().enabled == true)
                     {
                         point1 = point;
+                        GameObject.Find("audioClick").GetComponent<SoundBt>().ClickSound();
                         RemoveFromAlreadyLinked(point1);
                     }
                 }
@@ -90,8 +93,8 @@ public class QuestionLink1To1 : MonoBehaviour
                         point2 = point;
                         point1_lr.SetPosition(0, point1.GetComponent<Transform>().position);
                         point1_lr.SetPosition(1, point2.GetComponent<Transform>().position);
-
-                        alreadylinkedPoints.Add(new PointPair() { Point1 = point1, Point2 = point2});
+                        GameObject.Find("audioClick").GetComponent<SoundBt>().ChoicePlace();
+                        alreadylinked.Add(new PointPair() { Point1 = point1, Point2 = point2});
                         point1 = null;
                         point2 = null;
 
@@ -112,23 +115,59 @@ public class QuestionLink1To1 : MonoBehaviour
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
-        bool isAnswearCorrect = true;
-
-        foreach(var pair in alreadylinkedPoints)
+        foreach(var pair in alreadylinked)
         {
-            //Каждую связанную пару точек, проверим в массиве правильных ответов
-            if(alreadylinkedPoints.Count(rpair => rpair.Point1 == pair.Point1 && rpair.Point2 == pair.Point2) == 0)
-                isAnswearCorrect = false;
-        }
+            bool isAnswearCorrect = false;
+            foreach(var rpair in rightLinks)
+            {
+               //Каждую связанную пару точек, проверим в массиве правильных ответов
+               if(rpair.Point1 == pair.Point1 && rpair.Point2 == pair.Point2)
+               {
+                  isAnswearCorrect = true;
+               }
+            }
 
+            if(isAnswearCorrect)
+            {
+                Debug.Log("isAnswearCorrect="+isAnswearCorrect);
+                var lr = pair.Point1.GetComponent<LineRenderer>();
+                lr.startColor = new Color(178f/255f,209f/255f,121f/255f);//green
+                lr.endColor = new Color(178f/255f,209f/255f,121f/255f);    
+                ScoreKeeper.GetScoreKeeper().Score += 1;
+            }
+            else
+            {
+                ScoreKeeper.GetScoreKeeper().Score -= 1;
+                var lr = pair.Point1.GetComponent<LineRenderer>();
+                lr.startColor = new Color(183f/255f,80f/255f,84f/255f);//red
+                lr.endColor = new Color(183f/255f,80f/255f,84f/255f);
+            }
+            pair.Point1.GetComponent<Collider2D>().enabled=false;
+            var OK = EventSystem.current.currentSelectedGameObject;
+            if(OK != null) { OK.GetComponent<Button>().enabled = false;}
+        }
+/*
         if(isAnswearCorrect)
         {
             ScoreKeeper.GetScoreKeeper().Score += 1;
         }
+*/
+        //SceneManager.LoadScene(sceneName);
+        StartCoroutine(waitOkSound(sceneName));
+    }
 
-        SceneManager.LoadScene(sceneName);
+
+    public IEnumerator waitOkSound(string sceneName)
+    {
+   
+     yield return new WaitForSeconds(6f); 
+     SceneManager.LoadScene(sceneName);
+     
     }
 }
+
+
+
 
 [System.Serializable]
 public class PointPair {

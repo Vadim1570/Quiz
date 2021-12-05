@@ -2,7 +2,7 @@
 using UnityEngine;
 
 using UnityEngine.SceneManagement;
-
+using System.Collections;
 
 
 
@@ -10,9 +10,19 @@ public class GameManager : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(waitOkSound(sceneName));      
+        
+        //SceneManager.LoadScene(sceneName);
+       // Debug.Log("test");
     }
 
+    public IEnumerator waitOkSound(string sceneName)
+    {
+     
+     yield return new WaitForSeconds(0.3f); 
+     SceneManager.LoadScene(sceneName);
+     
+    }
     public void IncreaseScore(int hitpount)
     {
         ScoreKeeper.GetScoreKeeper().Score =+ hitpount;
@@ -36,7 +46,7 @@ public class GameManager : MonoBehaviour
 
       public void OpenQuiz()
     {
-      SceneManager.LoadScene("Level1");
+     // SceneManager.LoadScene("Level1");
     }
 
 

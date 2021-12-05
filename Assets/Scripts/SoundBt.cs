@@ -37,9 +37,12 @@ public AudioClip errorFX;
     public void ClickSound()
     {
     // Start is called before the first frame update
-     myFx.PlayOneShot(clickFX);
+        myFx.PlayOneShot(clickFX);
+     
+     }
 
-    }
+
+ 
 
     public void ChoicePlace()
     {

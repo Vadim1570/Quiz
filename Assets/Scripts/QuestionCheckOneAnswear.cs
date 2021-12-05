@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class QuestionCheckOneAnswear : MonoBehaviour
 {
@@ -34,6 +35,16 @@ public class QuestionCheckOneAnswear : MonoBehaviour
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
+        
+        var OK = EventSystem.current.currentSelectedGameObject;
+        if(OK != null) { OK.GetComponent<Button>().enabled = false;}
+
+
+        foreach(var bt in  GameObject.FindGameObjectsWithTag("btOneAnswer"))
+        {
+            bt.GetComponent<Button>().enabled = false;
+        }
+        
         //Подветить правильные ответы зеленым, а неверные красным
         foreach(var answear in Answears)
         {

@@ -96,27 +96,27 @@ public class QuestionDragAnswear : MonoBehaviour
         }
         #endregion 
 
-        bool isAnswearCorrect = true;
-
+        //Подсветим поставленные значения
         foreach(var put in alreadyPutStamps)
         {
             var image = put.Stamp1.GetComponent<Image>();
             //Каждую связанную пару точек, проверим в массиве правильных ответов
-            if(rightAnswears.Count(right => right.Stamp1 == put.Stamp1 && right.Stamp2 == put.Stamp2) == 0)
+            if(rightAnswears.Count(right => right.Stamp1 == put.Stamp1 && right.Stamp2 == put.Stamp2) != 0)
             {
-                image.color = new Color(183f/255f,80f/255f,84f/255f);  
+                image.color = new Color(178f/255f,209f/255f,121f/255f);//green 
             }
             else
             {
-                isAnswearCorrect = false;
-                image.color = new Color(178f/255f,209f/255f,121f/255f);
+                image.color = new Color(183f/255f,80f/255f,84f/255f);//red
             }
         }
 
-        if(isAnswearCorrect)
+        if(rightAnswears.Count() == alreadyPutStamps.Sum(put => rightAnswears.Count(right => right.Stamp1 == put.Stamp1 && right.Stamp2 == put.Stamp2)))
         {
             ScoreKeeper.GetScoreKeeper().Score += 1;
+            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
         }
+       else {StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());}
 
         StartCoroutine(LoadSceneAsync(sceneName));
     }

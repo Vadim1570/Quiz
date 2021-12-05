@@ -218,6 +218,18 @@ MonoBehaviour:
           m_StringArgument: Scene9i
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 600678917}
+        m_TargetAssemblyTypeName: SoundBt, Assembly-CSharp
+        m_MethodName: ClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &25555312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,9 +725,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1219160927}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 1219160925}
+        m_TargetAssemblyTypeName: QuestionLink1To1, Assembly-CSharp
+        m_MethodName: SaveAnswearAndLoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -987,6 +999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 789302848}
     m_Modifications:
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 1
@@ -1439,6 +1455,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 789302848}
     m_Modifications:
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d18fb545e0bcaa4b86310f05fbdffcc, type: 3}
     - target: {fileID: 1282296864076765677, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Name
       value: point-figura-zoo
@@ -1877,6 +1905,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 789302848}
     m_Modifications:
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0.9921569
       objectReference: {fileID: 0}
@@ -2035,11 +2067,11 @@ MonoBehaviour:
     Point2: {fileID: 30726904}
   - Point1: {fileID: 1174894249}
     Point2: {fileID: 1009922445}
-  - Point1: {fileID: 1174894249}
-    Point2: {fileID: 1009922445}
+  - Point1: {fileID: 893630267}
+    Point2: {fileID: 980113813}
   point1: {fileID: 0}
   point2: {fileID: 0}
-  alreadylinkedPoints: []
+  alreadylinked: []
 --- !u!4 &1219160926
 Transform:
   m_ObjectHideFlags: 0

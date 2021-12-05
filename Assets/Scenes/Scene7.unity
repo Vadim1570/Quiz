@@ -193,7 +193,7 @@ SortingGroup:
   m_GameObject: {fileID: 86840824}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &86840828
 SpriteMask:
@@ -626,7 +626,7 @@ SortingGroup:
   m_GameObject: {fileID: 273566507}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &273566511
 SpriteMask:
@@ -980,7 +980,7 @@ SortingGroup:
   m_GameObject: {fileID: 461255855}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &461255859
 SpriteMask:
@@ -1247,7 +1247,7 @@ SortingGroup:
   m_GameObject: {fileID: 692979878}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &692979882
 SpriteMask:
@@ -1743,10 +1743,11 @@ MonoBehaviour:
   AnwearInput: {fileID: 1723017394}
   RightAnswear: "\u041C\u0430\u0440\u043A\u0430"
   AnswearMaterial: {fileID: 2100000, guid: 7d18fb545e0bcaa4b86310f05fbdffcc, type: 3}
-  piecesWithProperty: []
+  rightLinks: []
   selectedPiece: {fileID: 0}
   Selected: 0
   anim: {fileID: 279726509}
+  alreadylinked: []
 --- !u!114 &996866913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2339,7 +2340,7 @@ SortingGroup:
   m_GameObject: {fileID: 1360265438}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &1360265442
 SpriteMask:
@@ -2549,9 +2550,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 996866913}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 996866912}
+        m_TargetAssemblyTypeName: QuestionPuzzle, Assembly-CSharp
+        m_MethodName: SaveAnswearAndLoadScene
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2774,7 +2775,7 @@ SortingGroup:
   m_GameObject: {fileID: 1463265527}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &1463265531
 SpriteMask:
@@ -3041,7 +3042,7 @@ SortingGroup:
   m_GameObject: {fileID: 1481404637}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &1481404641
 SpriteMask:
@@ -3214,7 +3215,7 @@ SortingGroup:
   m_GameObject: {fileID: 1484070756}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &1484070760
 SpriteMask:
@@ -3667,7 +3668,7 @@ SortingGroup:
   m_GameObject: {fileID: 1722205543}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &1722205547
 SpriteMask:
@@ -4078,7 +4079,7 @@ SortingGroup:
   m_GameObject: {fileID: 1828973550}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &1828973554
 SpriteMask:
@@ -4251,7 +4252,7 @@ SortingGroup:
   m_GameObject: {fileID: 1839060610}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &1839060614
 SpriteMask:
@@ -4581,7 +4582,7 @@ SortingGroup:
   m_GameObject: {fileID: 1983620195}
   m_Enabled: 1
   m_SortingLayerID: -1788756239
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
 --- !u!331 &1983620199
 SpriteMask:
