@@ -125,11 +125,13 @@ public class QuestionPuzzle : MonoBehaviour
             if (AnwearInput.text.ToLower() == RightAnswear.ToLower()) 
             {
                 image.color = new Color(178f/255f,209f/255f,121f/255f);
+                StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
                 ScoreKeeper.GetScoreKeeper().Score += 1;
             }
             else 
             {
                 image.color = new Color(183f/255f,80f/255f,84f/255f);
+                StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());
                 anim.SetTrigger("play"); 
             }
         }
@@ -139,7 +141,7 @@ public class QuestionPuzzle : MonoBehaviour
 
     public IEnumerator LoadSceneAsync(string sceneName)
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(sceneName);
     }
 }

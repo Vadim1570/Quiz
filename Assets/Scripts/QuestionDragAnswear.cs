@@ -123,7 +123,7 @@ public class QuestionDragAnswear : MonoBehaviour
 
     public IEnumerator LoadSceneAsync(string sceneName)
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene(sceneName);
     }
 }

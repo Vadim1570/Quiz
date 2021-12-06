@@ -414,7 +414,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &53801302
 RectTransform:
@@ -657,7 +657,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!212 &93381764
 SpriteRenderer:
@@ -777,6 +777,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 789302848}
     m_Modifications:
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 1
@@ -1108,7 +1116,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &790865012
 RectTransform:
@@ -1126,7 +1134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 449, y: -369.2708}
+  m_AnchoredPosition: {x: 449, y: -374.4108}
   m_SizeDelta: {x: 118.21, y: 58.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790865013
@@ -1156,7 +1164,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1189,6 +1197,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 789302848}
     m_Modifications:
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1282296864076765677, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Name
       value: point-herb-1975
@@ -1548,7 +1564,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!212 &1013366047
 SpriteRenderer:
@@ -1757,7 +1773,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1105774564
 RectTransform:
@@ -1958,7 +1974,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1165655605
 RectTransform:
@@ -2035,6 +2051,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 789302848}
     m_Modifications:
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0.9921569
@@ -2186,7 +2210,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!212 &1197403029
 SpriteRenderer:
@@ -2307,8 +2331,10 @@ MonoBehaviour:
   - Point1: {fileID: 1494285533}
     Point2: {fileID: 1112804441}
   point1: {fileID: 0}
+  MousePos: {x: 0, y: 0, z: 0}
+  PrevMousePos: {x: 0, y: 0, z: 0}
   point2: {fileID: 0}
-  alreadylinkedPoints: []
+  alreadylinked: []
 --- !u!4 &1219160926
 Transform:
   m_ObjectHideFlags: 0
@@ -2352,7 +2378,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1309295870
 RectTransform:
@@ -2400,7 +2426,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2443,7 +2469,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1313342750
 RectTransform:
@@ -2530,7 +2556,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!212 &1355148655
 SpriteRenderer:
@@ -2800,7 +2826,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1413192545
 RectTransform:
@@ -2963,6 +2989,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 789302848}
     m_Modifications:
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 1
       objectReference: {fileID: 0}
@@ -3093,7 +3127,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!212 &1614810455
 SpriteRenderer:
@@ -3401,7 +3435,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1840885798
 RectTransform:
@@ -3419,7 +3453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -429, y: -374.41083}
+  m_AnchoredPosition: {x: -433.2, y: -374.41083}
   m_SizeDelta: {x: 111.59, y: 56.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840885799
@@ -3492,7 +3526,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1922193253
 RectTransform:
@@ -3510,7 +3544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12, y: -372.61084}
+  m_AnchoredPosition: {x: 12, y: -374.4108}
   m_SizeDelta: {x: 120.6, y: 64.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1922193254
@@ -3540,7 +3574,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3573,6 +3607,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 789302848}
     m_Modifications:
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCapVertices
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
+      propertyPath: m_Parameters.numCornerVertices
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1282296864076765677, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Name
       value: point-herb-2002
@@ -3693,7 +3735,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1947471178
 RectTransform:
@@ -3780,7 +3822,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &1951987353
 RectTransform:
@@ -3798,7 +3840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232, y: -371.8908}
+  m_AnchoredPosition: {x: 232, y: -374.4108}
   m_SizeDelta: {x: 133.48, y: 63.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1951987354
@@ -3828,7 +3870,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3871,7 +3913,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!224 &2112589801
 RectTransform:
