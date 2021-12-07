@@ -133,22 +133,24 @@ public class QuestionLink1To1 : MonoBehaviour
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
+        int correctPairCount = 0;
         foreach(var pair in alreadylinked)
         {
-            bool isAnswearCorrect = false;
+            bool isPairCorrect = false;
             foreach(var rpair in rightLinks)
             {
                //Каждую связанную пару точек, проверим в массиве правильных ответов
                if(rpair.Point1 == pair.Point1 && rpair.Point2 == pair.Point2)
                {
-                  isAnswearCorrect = true;
+                  isPairCorrect = true;
                }
             }
 
-            if(isAnswearCorrect)
+            if(isPairCorrect)
             {
-                
-                StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
+                //Запоминаем сколько правильных пар
+                correctPairCount ++;
+                //Подсветим правильную линию зеленым
                 var lr = pair.Point1.GetComponent<LineRenderer>();
                 lr.startColor = new Color(178f/255f,209f/255f,121f/255f);//green
                 lr.endColor = new Color(178f/255f,209f/255f,121f/255f);    
@@ -156,23 +158,31 @@ public class QuestionLink1To1 : MonoBehaviour
             }
             else
             {
-                ScoreKeeper.GetScoreKeeper().Score -= 1;
-                StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());
+                //Подсветим ошибочную линию красным
                 var lr = pair.Point1.GetComponent<LineRenderer>();
                 lr.startColor = new Color(183f/255f,80f/255f,84f/255f);//red
                 lr.endColor = new Color(183f/255f,80f/255f,84f/255f);
             }
+
+            //Блокируем кнопку OK
             pair.Point1.GetComponent<Collider2D>().enabled=false;
             var OK = EventSystem.current.currentSelectedGameObject;
             if(OK != null) { OK.GetComponent<Button>().enabled = false;}
         }
-/*
-        if(isAnswearCorrect)
+
+        //Если все пары правильные, то звук победы
+        if(correctPairCount == rightLinks.Count())
         {
-            ScoreKeeper.GetScoreKeeper().Score += 1;
+            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
         }
-*/
-        //SceneManager.LoadScene(sceneName);
+        else
+        {       
+            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());
+        }
+
+        //Прибавим счёт
+        ScoreKeeper.GetScoreKeeper().Score += correctPairCount;
+
         StartCoroutine(waitOkSound(sceneName));
     }
 
