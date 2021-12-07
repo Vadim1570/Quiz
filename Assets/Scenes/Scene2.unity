@@ -779,11 +779,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCapVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCornerVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
@@ -1199,11 +1199,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCapVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCornerVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1282296864076765677, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Name
@@ -2053,11 +2053,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCapVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCornerVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
@@ -2990,11 +2990,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCapVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCornerVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
@@ -3609,11 +3609,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCapVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2227669093890636330, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Parameters.numCornerVertices
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1282296864076765677, guid: 2e24d4bb959d51143b0334dd128aa3f2, type: 3}
       propertyPath: m_Name
