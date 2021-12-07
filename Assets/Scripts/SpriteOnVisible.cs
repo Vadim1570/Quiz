@@ -8,26 +8,20 @@ using UnityEngine.EventSystems;
 
 public class SpriteOnVisible : MonoBehaviour
 {
-
-    public GameObject targetObject;
-    public int countAnswer;
+    public GameObject [] targetObjects;
     
-    private static int k=0;
+    public int k=0;
    
-
-   void Start () { 
-         
-       if  (targetObject!=null)
-       {
-           targetObject.SetActive(false);
-       }
-    
-
+    void Start()
+    {
+        k=0;
+        foreach(var targetObject in targetObjects)
+        {
+            targetObject.SetActive(false);
+        }
     }
 
-
-
-     public void VisibleTask()
+    public void OnButtonClick(GameObject targetObject)
     {
         k++;
         targetObject.SetActive(true);

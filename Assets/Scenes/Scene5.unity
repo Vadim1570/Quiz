@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 408680664}
   - component: {fileID: 408680663}
   - component: {fileID: 408680662}
-  - component: {fileID: 408680665}
   m_Layer: 5
   m_Name: bt2
   m_TagString: Untagged
@@ -207,13 +206,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 408680665}
+      - m_Target: {fileID: 1963832477}
         m_TargetAssemblyTypeName: SpriteOnVisible, Assembly-CSharp
-        m_MethodName: VisibleTask
-        m_Mode: 1
+        m_MethodName: OnButtonClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 737186488}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -269,20 +268,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408680660}
   m_CullTransparentMesh: 1
---- !u!114 &408680665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408680660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5581e2aa23fa45641b1040e3ee1d121f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 737186488}
-  countAnswer: 5
 --- !u!1 &499370845
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +362,6 @@ GameObject:
   - component: {fileID: 612634345}
   - component: {fileID: 612634344}
   - component: {fileID: 612634343}
-  - component: {fileID: 612634346}
   m_Layer: 5
   m_Name: bt5
   m_TagString: Untagged
@@ -449,13 +433,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 612634346}
+      - m_Target: {fileID: 1963832477}
         m_TargetAssemblyTypeName: SpriteOnVisible, Assembly-CSharp
-        m_MethodName: VisibleTask
-        m_Mode: 1
+        m_MethodName: OnButtonClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 666207643}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -511,20 +495,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612634341}
   m_CullTransparentMesh: 1
---- !u!114 &612634346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612634341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5581e2aa23fa45641b1040e3ee1d121f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 666207643}
-  countAnswer: 5
 --- !u!1 &666207643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,7 +2074,6 @@ GameObject:
   - component: {fileID: 1430328776}
   - component: {fileID: 1430328775}
   - component: {fileID: 1430328774}
-  - component: {fileID: 1430328777}
   m_Layer: 5
   m_Name: bt4
   m_TagString: Untagged
@@ -2176,13 +2145,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1430328777}
+      - m_Target: {fileID: 1963832477}
         m_TargetAssemblyTypeName: SpriteOnVisible, Assembly-CSharp
-        m_MethodName: VisibleTask
-        m_Mode: 1
+        m_MethodName: OnButtonClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 821747236}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2238,20 +2207,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430328772}
   m_CullTransparentMesh: 1
---- !u!114 &1430328777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430328772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5581e2aa23fa45641b1040e3ee1d121f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 821747236}
-  countAnswer: 5
 --- !u!1 &1433035710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,7 +2455,6 @@ GameObject:
   - component: {fileID: 1528385421}
   - component: {fileID: 1528385420}
   - component: {fileID: 1528385419}
-  - component: {fileID: 1528385422}
   m_Layer: 5
   m_Name: bt3
   m_TagString: Untagged
@@ -2572,13 +2526,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1528385422}
+      - m_Target: {fileID: 1963832477}
         m_TargetAssemblyTypeName: SpriteOnVisible, Assembly-CSharp
-        m_MethodName: VisibleTask
-        m_Mode: 1
+        m_MethodName: OnButtonClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1064441397}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2634,20 +2588,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528385417}
   m_CullTransparentMesh: 1
---- !u!114 &1528385422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528385417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5581e2aa23fa45641b1040e3ee1d121f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 1064441397}
-  countAnswer: 5
 --- !u!1 &1735882329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,7 +2686,6 @@ GameObject:
   - component: {fileID: 1808017737}
   - component: {fileID: 1808017736}
   - component: {fileID: 1808017735}
-  - component: {fileID: 1808017739}
   m_Layer: 5
   m_Name: bt1
   m_TagString: Untagged
@@ -2829,13 +2768,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1808017739}
+      - m_Target: {fileID: 1963832477}
         m_TargetAssemblyTypeName: SpriteOnVisible, Assembly-CSharp
-        m_MethodName: VisibleTask
-        m_Mode: 1
+        m_MethodName: OnButtonClick
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1267833476}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2891,20 +2830,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1808017733}
   m_CullTransparentMesh: 1
---- !u!114 &1808017739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808017733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5581e2aa23fa45641b1040e3ee1d121f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 1267833476}
-  countAnswer: 5
 --- !u!1 &1849649056
 GameObject:
   m_ObjectHideFlags: 0
@@ -3201,8 +3126,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5581e2aa23fa45641b1040e3ee1d121f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 0}
-  countAnswer: 5
+  targetObjects:
+  - {fileID: 1267833476}
+  - {fileID: 737186488}
+  - {fileID: 1064441397}
+  - {fileID: 821747236}
+  - {fileID: 666207643}
+  k: 0
 --- !u!212 &1963832478
 SpriteRenderer:
   m_ObjectHideFlags: 0
