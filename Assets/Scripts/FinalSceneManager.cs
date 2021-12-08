@@ -7,19 +7,13 @@ public class FinalSceneManager : MonoBehaviour
 {
     public UnityEngine.UI.Text YourScoreText;
 
-    public void LoadScene(string sceneName)
-    {
-        ScoreKeeper.GetScoreKeeper().Score=0;
-        SceneManager.LoadScene(sceneName);
-
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-
         YourScoreText.text = $"{ScoreKeeper.GetScoreKeeper().Score}";
     }
 
-    
+    public void SetScoreToZero()
+    {
+        ScoreKeeper.GetScoreKeeper().Score = 0;
+    }
 }
