@@ -151,7 +151,6 @@ public class QuestionLink1To1 : MonoBehaviour
                 var lr = pair.Point1.GetComponent<LineRenderer>();
                 lr.startColor = new Color(178f/255f,209f/255f,121f/255f);//green
                 lr.endColor = new Color(178f/255f,209f/255f,121f/255f);    
-                ScoreKeeper.GetScoreKeeper().Score += 1;
             }
             else
             {
