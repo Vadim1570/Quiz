@@ -19,7 +19,7 @@ public class QuestionPuzzle : MonoBehaviour
     public bool Selected;
     public Animator anim;
     bool collect = false; //тригер собраности пазлов, чтобы анимация Правильный ответ Марка не выводилась, если его не собирали
-
+    private SoundBt audioClick_SoundBt;
 
     public List<GameObject> alreadylinked = new List<GameObject>();
 
@@ -44,6 +44,8 @@ public class QuestionPuzzle : MonoBehaviour
 
     void Start()
     {
+        this.audioClick_SoundBt = GameObject.Find("audioClick").GetComponent<SoundBt>();
+
         OIL =1;
         //Прячем тестовое поле
         AnwearInput.gameObject.SetActive(false);
@@ -68,7 +70,7 @@ public class QuestionPuzzle : MonoBehaviour
                 selectedPiece = hit.transform.gameObject;
                 RemoveFromAlreadyLinked(selectedPiece);
                 Selected = true;
-                GameObject.Find("audioClick").GetComponent<SoundBt>().ClickSound();
+                audioClick_SoundBt.ClickSound();
                 selectedPiece.GetComponent<SortingGroup>().sortingOrder = OIL;
                 OIL++;
                
@@ -98,7 +100,9 @@ public class QuestionPuzzle : MonoBehaviour
                 selectedPiece.GetComponent<SortingGroup>().sortingOrder = 0;
 
                 if(!IsAlreadyLinked(selectedPiece))
-                 { GameObject.Find("audioClick").GetComponent<SoundBt>().ChoicePlace(); }
+                { 
+                    audioClick_SoundBt.ChoicePlace(); 
+                }
                 alreadylinked.Add(selectedPiece);
 
                 //Отображаем тестовое поле, если все кусочки лежат в правильных местах, то выводим текстовое поле для ввода ответа
@@ -125,19 +129,19 @@ public class QuestionPuzzle : MonoBehaviour
             if (AnwearInput.text.ToLower() == RightAnswear.ToLower()) 
             {
                 image.color = new Color(178f/255f,209f/255f,121f/255f);
-                StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
+                StartCoroutine(audioClick_SoundBt.winSound());
                 ScoreKeeper.GetScoreKeeper().Score += 1;
             }
             else 
             {
                 image.color = new Color(183f/255f,80f/255f,84f/255f);
-                StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());
+                StartCoroutine(audioClick_SoundBt.errorSound());
                 anim.SetTrigger("play"); 
             }
         }
         else //Если пазл не собран, звучит ошибка
         {
-            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());
+            StartCoroutine(audioClick_SoundBt.errorSound());
         }
         StartCoroutine(LoadSceneAsync(sceneName));
     

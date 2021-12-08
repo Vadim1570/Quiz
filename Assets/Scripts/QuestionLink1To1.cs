@@ -20,9 +20,7 @@ public class QuestionLink1To1 : MonoBehaviour
     public Vector3 PrevMousePos;
     public GameObject point2 = null;
 
-    //public int MouseButtonCount1;
-    //public int MouseButtonCount2;
-    //public int MouseButtonCount3;
+    private SoundBt audioClick_SoundBt;
     
     //Сюда запоминаем уже связанные между собой точки
     public List<PointPair> alreadylinked = new List<PointPair>();
@@ -49,6 +47,7 @@ public class QuestionLink1To1 : MonoBehaviour
 
     void Start()
     {
+        this.audioClick_SoundBt = GameObject.Find("audioClick").GetComponent<SoundBt>();
         PrevMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MousePos = PrevMousePos;
     }
@@ -72,7 +71,7 @@ public class QuestionLink1To1 : MonoBehaviour
                     if(point.GetComponent<LineRenderer>() != null && point.GetComponent<LineRenderer>().enabled == true)
                     {
                         point1 = point;
-                        GameObject.Find("audioClick").GetComponent<SoundBt>().ClickSound();
+                        audioClick_SoundBt.ClickSound();
                         RemoveFromAlreadyLinked(point1);
                     }
                 }
@@ -103,7 +102,7 @@ public class QuestionLink1To1 : MonoBehaviour
                         point2 = point;
                         point1_lr.SetPosition(0, point1.GetComponent<Transform>().position);
                         point1_lr.SetPosition(1, point2.GetComponent<Transform>().position);
-                        GameObject.Find("audioClick").GetComponent<SoundBt>().ChoicePlace();
+                        audioClick_SoundBt.ChoicePlace();
                         alreadylinked.Add(new PointPair() { Point1 = point1, Point2 = point2});
                         point1 = null;
                         point2 = null;
@@ -169,11 +168,11 @@ public class QuestionLink1To1 : MonoBehaviour
         //Если все пары правильные, то звук победы
         if(correctPairCount == rightLinks.Count())
         {
-            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
+            StartCoroutine(audioClick_SoundBt.winSound());
         }
         else
         {       
-            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());
+            StartCoroutine(audioClick_SoundBt.errorSound());
         }
 
         //Прибавим счёт

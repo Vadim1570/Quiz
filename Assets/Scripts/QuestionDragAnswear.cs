@@ -12,6 +12,9 @@ public class QuestionDragAnswear : MonoBehaviour
 {    //Заранее заполненные правильные ответы
     public StampPair [] rightAnswears;
     public GameObject selectedStamp;
+    
+    private SoundBt audioClick_SoundBt;
+    private SoundBt audioPoem_SoundBt;
 
     //Сюда запоминаем уже положенные ответы между собой точки
     public List<StampPair> alreadyPutStamps = new List<StampPair>();    
@@ -33,8 +36,11 @@ public class QuestionDragAnswear : MonoBehaviour
             alreadyPutStamps.Remove(pairToRemove);
     }
     #endregion
+
     void Start()
     {
+        this.audioClick_SoundBt = GameObject.Find("audioClick").GetComponent<SoundBt>();
+        this.audioPoem_SoundBt = GameObject.Find("audioPoem").GetComponent<SoundBt>();
     }
 
     public void OnAnswearDrag(BaseEventData eventData)
@@ -43,7 +49,7 @@ public class QuestionDragAnswear : MonoBehaviour
     }
     public void OnPointerDown(BaseEventData eventData)
     {
-        GameObject.Find("audioClick").GetComponent<SoundBt>().ClickSound();
+        audioClick_SoundBt.ClickSound();
     }
 
     void Update()
@@ -65,8 +71,7 @@ public class QuestionDragAnswear : MonoBehaviour
                         selectedStamp.transform.position = holeStamp.transform.position;
                         
                         alreadyPutStamps.Add(new StampPair() { Stamp1 = selectedStamp, Stamp2 = holeStamp});
-                        //GetComponent<SoundBt>().ChoicePlace();
-                        GameObject.Find("audioClick").GetComponent<SoundBt>().ChoicePlace();
+                        audioClick_SoundBt.ChoicePlace();
                     }
                 }
             }
@@ -85,7 +90,7 @@ public class QuestionDragAnswear : MonoBehaviour
     public void SaveAnswearAndLoadScene(string sceneName)
     {
         #region Блокируем все элементы на форме и останавливаем плеер
-        GameObject.Find("audioPoem").GetComponent<SoundBt>().PoemSoundStop();
+        audioPoem_SoundBt.PoemSoundStop();
         var OK = EventSystem.current.currentSelectedGameObject;
         if(OK != null)
             OK.GetComponent<Button>().enabled = false;
@@ -114,9 +119,9 @@ public class QuestionDragAnswear : MonoBehaviour
         if(rightAnswears.Count() == alreadyPutStamps.Sum(put => rightAnswears.Count(right => right.Stamp1 == put.Stamp1 && right.Stamp2 == put.Stamp2)))
         {
             ScoreKeeper.GetScoreKeeper().Score += 1;
-            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
+            StartCoroutine(audioClick_SoundBt.winSound());
         }
-       else {StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());}
+       else {StartCoroutine(audioClick_SoundBt.errorSound());}
 
         StartCoroutine(LoadSceneAsync(sceneName));
     }

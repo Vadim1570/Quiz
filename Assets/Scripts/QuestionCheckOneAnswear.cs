@@ -12,6 +12,12 @@ public class QuestionCheckOneAnswear : MonoBehaviour
     public GameObject[] Answears;
     public Material AnswearMaterial;
 
+    private SoundBt audioClick_SoundBt;
+
+    private void Start() {
+        audioClick_SoundBt = GameObject.Find("audioClick").GetComponent<SoundBt>();
+    }
+
     public void SetAnswear(GameObject selectedAnswear)
     {
         this.SelectedAnswear = selectedAnswear;
@@ -35,7 +41,6 @@ public class QuestionCheckOneAnswear : MonoBehaviour
 
     public void SaveAnswearAndLoadScene(string sceneName)
     {
-        
         var OK = EventSystem.current.currentSelectedGameObject;
         if(OK != null) { OK.GetComponent<Button>().enabled = false;}
 
@@ -57,7 +62,7 @@ public class QuestionCheckOneAnswear : MonoBehaviour
                 }
             else
                {
-                   //GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound();
+                   //audioClick_SoundBt.errorSound();
                    image.color = new Color(183f/255f,80f/255f,84f/255f); 
                    } 
         }
@@ -65,9 +70,9 @@ public class QuestionCheckOneAnswear : MonoBehaviour
         if(SelectedAnswear == RightAnswear )
             {
             ScoreKeeper.GetScoreKeeper().Score += 1;
-            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().winSound());
+            StartCoroutine(audioClick_SoundBt.winSound());
             }
-            else{StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());}
+            else{StartCoroutine(audioClick_SoundBt.errorSound());}
 
         StartCoroutine(LoadSceneAsync(sceneName));
     }
