@@ -118,11 +118,10 @@ public class QuestionPuzzle : MonoBehaviour
         var OK = EventSystem.current.currentSelectedGameObject;
         if(OK != null) { OK.GetComponent<Button>().enabled = false;}
 
-
         if (collect == true)
         {
-        var image = AnwearInput.GetComponent<Image>();
-        image.material = AnswearMaterial;
+            var image = AnwearInput.GetComponent<Image>();
+            image.material = AnswearMaterial;
             if (AnwearInput.text.ToLower() == RightAnswear.ToLower()) 
             {
                 image.color = new Color(178f/255f,209f/255f,121f/255f);
@@ -135,6 +134,10 @@ public class QuestionPuzzle : MonoBehaviour
                 StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());
                 anim.SetTrigger("play"); 
             }
+        }
+        else //Если пазл не собран, звучит ошибка
+        {
+            StartCoroutine(GameObject.Find("audioClick").GetComponent<SoundBt>().errorSound());
         }
         StartCoroutine(LoadSceneAsync(sceneName));
     
