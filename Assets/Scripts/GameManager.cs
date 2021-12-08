@@ -36,13 +36,26 @@ public class GameManager : MonoBehaviour
 
  public void OpenAudio()
     {
+        OpenAudioWait();
+    }
+    public IEnumerator OpenAudioWait()
+    {
+        yield return new WaitForSeconds(0.3f);
         Application.OpenURL("https://youtube.com/playlist?list=PLsDUIWlwo18rrEEsrEpbyxGfi1-F8QCrZ");
     }
 
     public void OpenVideo()
     {
+        OpenVideoWait();
+    }
+
+    public IEnumerator OpenVideoWait()
+    {
+
+        yield return new WaitForSeconds(0.3f);
         Application.OpenURL("https://youtube.com/playlist?list=PLsDUIWlwo18qs1zLiQAGVAEr0HFOOrMzq");
     }
+
 
       public void OpenQuiz()
     {
