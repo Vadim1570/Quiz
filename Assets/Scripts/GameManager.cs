@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
  public void OpenAudio()
     {
-        OpenAudioWait();
+        StartCoroutine(OpenAudioWait());
     }
     public IEnumerator OpenAudioWait()
     {
@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenVideo()
     {
-        OpenVideoWait();
+        StartCoroutine(OpenVideoWait());
     }
 
     public IEnumerator OpenVideoWait()
