@@ -46,9 +46,6 @@ public class QuestionLink1To1 : MonoBehaviour
     }
     #endregion
 
-    private void Awake()
-    {
-    }
 
     void Start()
     {

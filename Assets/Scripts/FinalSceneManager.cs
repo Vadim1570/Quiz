@@ -21,9 +21,5 @@ public class FinalSceneManager : MonoBehaviour
         YourScoreText.text = $"{ScoreKeeper.GetScoreKeeper().Score}";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

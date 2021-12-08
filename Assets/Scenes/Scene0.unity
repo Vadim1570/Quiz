@@ -964,9 +964,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 215028824}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OpenVideo
+      - m_Target: {fileID: 1229862930}
+        m_TargetAssemblyTypeName: SoundBt, Assembly-CSharp
+        m_MethodName: ClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -975,10 +975,10 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 1229862930}
-        m_TargetAssemblyTypeName: SoundBt, Assembly-CSharp
-        m_MethodName: ClickSound
+        m_CallState: 2
+      - m_Target: {fileID: 215028824}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OpenVideo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1263,9 +1263,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 215028824}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OpenAudio
+      - m_Target: {fileID: 1229862930}
+        m_TargetAssemblyTypeName: SoundBt, Assembly-CSharp
+        m_MethodName: ClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1274,10 +1274,10 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 1229862930}
-        m_TargetAssemblyTypeName: SoundBt, Assembly-CSharp
-        m_MethodName: ClickSound
+        m_CallState: 2
+      - m_Target: {fileID: 215028824}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OpenAudio
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

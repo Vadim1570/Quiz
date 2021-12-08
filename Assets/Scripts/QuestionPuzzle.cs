@@ -44,6 +44,7 @@ public class QuestionPuzzle : MonoBehaviour
 
     void Start()
     {
+        OIL =1;
         //Прячем тестовое поле
         AnwearInput.gameObject.SetActive(false);
 
@@ -70,7 +71,7 @@ public class QuestionPuzzle : MonoBehaviour
                 GameObject.Find("audioClick").GetComponent<SoundBt>().ClickSound();
                 selectedPiece.GetComponent<SortingGroup>().sortingOrder = OIL;
                 OIL++;
-                 Debug.Log(selectedPiece.transform.position);
+               
 
             }
         }
